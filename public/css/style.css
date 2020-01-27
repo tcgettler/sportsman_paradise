@@ -1,0 +1,146 @@
+nav ul a.btn, nav ul a.btn-large, nav ul a.btn-small, nav ul a.btn-large, nav ul a.btn-flat, nav ul a.btn-floating {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+body{
+    overflow-y: hidden;
+}
+
+.header{
+    background-color:#000000;
+    height:10vh;
+    width: 100vw;
+}
+
+.card {
+    z-index:1000;
+}
+
+.nav {
+    background-color:grey;
+    height: 95vh;
+}
+
+.modal-header-content{
+    padding-bottom:1vh;
+}
+
+/* label focus color */
+.input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: #005eed !important;
+   }
+
+/* label underline focus color */
+.input-field input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
+border-bottom: 1px solid #005eed !important;
+box-shadow: 0 1px 0 0 #005eed !important;
+}
+
+/* label focus color */
+.input-field input[type=password]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: #005eed !important;
+   }
+
+/* label underline focus color */
+.input-field input[type=password]:focus, .materialize-textarea:focus:not([readonly]) {
+border-bottom: 1px solid #005eed !important;
+box-shadow: 0 1px 0 0 #005eed !important;
+}
+
+.brand-logo{
+    height:10vh;
+    width:auto;
+    margin-left: 5vw;;
+}
+
+.card{
+    margin-top: 5%;
+    width:20vw;
+    height: auto;
+}
+
+.card-body{
+    padding-bottom:0;
+}
+
+.card-img-top{
+    width:auto;
+    height:40vh;
+}
+
+.quantity{
+    width:47%;
+}
+
+.card-text{
+    height: 10vh;
+}
+
+.cart-item{
+    height:10vh;
+}
+
+.btn-trash{
+    background-color:white;
+}
+
+#card_modal{
+    width:30vw;
+    height:45vh;
+    padding: 0 auto;
+}
+
+#card_sample{
+    margin:0 auto;
+    margin-top:2.5vh;
+}
+
+#forgot{
+    padding-top: 2vh;
+    text-decoration:underline;
+}
+
+#orderAlert{
+    z-index: 0;
+    background-color: white;
+    border-style: solid;
+    border-width: 2%;
+    border-color: black;
+    padding: 1% 2% 0% 2%;
+    border-radius: 15px;
+    opacity: 0;
+}
+
+.btn-secondary{
+    height:100%;
+    z-index:5;
+    background-color:black;
+    border:none;
+}
+
+.fa-shopping-cart{
+    color:white;
+}
+
+.btn-third{
+    height:100%;
+    background-color:black;
+    color:white;
+}
+
+.btn-remove{
+    top:-2.5vh;
+    right:-2vw;
+    z-index:4;
+    background:none;
+}
+
+.fa-times-circle{
+    color:red;
+    background-color:white;
+}
+
+.addStock{
+    margin-bottom:5%;
+}
