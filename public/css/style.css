@@ -13,8 +13,27 @@ body{
     width: 100vw;
 }
 
+.card.small {
+    height: 350px;
+}
+
 .card {
-    z-index:1000;
+    width:20vw;
+    height: 50vh;
+    margin-left: 5vw;
+}
+.card_space {
+    width:5vw;
+    visibility: hidden;
+}
+
+.modal h4 {
+    margin-top: 2vh;
+}
+
+.btn-small{
+    margin-left:1vw;
+    margin-bottom:1vh;
 }
 
 .nav {
@@ -54,41 +73,8 @@ box-shadow: 0 1px 0 0 #005eed !important;
     margin-left: 5vw;;
 }
 
-.card{
-    margin-top: 5%;
-    width:20vw;
-    height: auto;
-}
-
-.card-body{
-    padding-bottom:0;
-}
-
-.card-img-top{
-    width:auto;
-    height:40vh;
-}
-
-.quantity{
-    width:47%;
-}
-
-.card-text{
-    height: 10vh;
-}
-
-.cart-item{
-    height:10vh;
-}
-
 .btn-trash{
     background-color:white;
-}
-
-#card_modal{
-    width:30vw;
-    height:45vh;
-    padding: 0 auto;
 }
 
 #card_sample{
