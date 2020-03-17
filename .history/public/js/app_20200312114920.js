@@ -299,15 +299,11 @@ const renderSeatSelection = function(data){
 const signIn = function(username, password){
     console.log(username);
     console.log(password);
-    var login = {username: username, password: password};
-    $.ajax({
-        url: '/login',
-        method: 'POST',
-        data: login,
-        timeout:5000
-    }).then(function(response){
+    if (username == "admin@txsportsmansparadise.com" && password == "Setting2020!"){
+        console.log(username)
+        console.log(password)
         getGamesManager();
-    });
+    }
 }
 
 const renderWinner = function(data){

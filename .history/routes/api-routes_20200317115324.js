@@ -3,15 +3,6 @@ var passport = require('passport');
 
 module.exports = function(app){
 
-    app.post('/login',
-    passport.authenticate('local'),
-    function (req, res) {
-      res.json({
-        user: req.user,
-        success: true
-      });
-    });
-
     app.get('/api/games', function(req,res){
         db.Games.findAll({}).then(function(rows){
             res.json(rows);
@@ -99,5 +90,5 @@ module.exports = function(app){
         passport.authenticate('local', { successRedirect: '/',
                                    failureRedirect: '/login',
                                    failureFlash: true })
-    );
+);
 };

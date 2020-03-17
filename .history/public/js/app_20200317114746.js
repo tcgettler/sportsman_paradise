@@ -305,9 +305,9 @@ const signIn = function(username, password){
         method: 'POST',
         data: login,
         timeout:5000
-    }).then(function(response){
+    })
         getGamesManager();
-    });
+    
 }
 
 const renderWinner = function(data){

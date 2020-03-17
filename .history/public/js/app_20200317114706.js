@@ -299,15 +299,15 @@ const renderSeatSelection = function(data){
 const signIn = function(username, password){
     console.log(username);
     console.log(password);
-    var login = {username: username, password: password};
+    var login = {username: username, password: password}
     $.ajax({
-        url: '/login',
+        url: '/games/create',
         method: 'POST',
-        data: login,
+        data: ,
         timeout:5000
-    }).then(function(response){
+    })
         getGamesManager();
-    });
+    
 }
 
 const renderWinner = function(data){

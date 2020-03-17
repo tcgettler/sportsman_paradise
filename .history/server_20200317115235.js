@@ -9,20 +9,20 @@ var Sequelize = require ('sequelize');
 var PORT = process.env.PORT || 8080;
 
 var passport = require('passport')
-  , LocalStrategy = require('passport-local').Strategy;
+var LocalStrategy = require('passport-local').Strategy;
 
 passport.use(new LocalStrategy(
   function(username, password, done) {
-    User.findOne({ username: email }, function(err, user) {
+    if (username == process.env.admin && password == process.env.admin){
+      return done(null, username);
+    }
+    User.findOne({ username: username }, function(err, user) {
       if (err) { return done(err); }
       if (!user) {
         return done(null, false, { message: 'Incorrect username.' });
       }
       if (!user.validPassword(password)) {
         return done(null, false, { message: 'Incorrect password.' });
-      }
-      if (username == process.env.admin && password == process.env.admin){
-        return done(null, username)
       }
       return done(null, user);
     });

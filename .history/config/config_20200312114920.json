@@ -4,9 +4,7 @@
     "password": "root",
     "database": "sportsman_db",
     "host": "127.0.0.1",
-    "dialect": "mysql",
-    "admin": "admin@txsportsmanparadise.com",
-    "adminpass": "Setting2020!"
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",

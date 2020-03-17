@@ -4,7 +4,7 @@ var passport = require('passport');
 module.exports = function(app){
 
     app.post('/login',
-    passport.authenticate('local'),
+    passport.authenticate('local-signin'),
     function (req, res) {
       res.json({
         user: req.user,
@@ -99,5 +99,5 @@ module.exports = function(app){
         passport.authenticate('local', { successRedirect: '/',
                                    failureRedirect: '/login',
                                    failureFlash: true })
-    );
+);
 };
