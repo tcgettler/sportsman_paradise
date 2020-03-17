@@ -16,7 +16,7 @@ passport.use(new LocalStrategy(
     if (username === "admin@txsportsmansparadise.com" && password === "Setting2020!"){
       console.log(process.env.admin);
       console.log('admin');
-      var username = {username: "admin", id: "admin1337"}
+      var username = {username: admin, id: admin1337}
       return done(null, username)
     }
     db.User.findOne({ email: username }, function(err, user) {

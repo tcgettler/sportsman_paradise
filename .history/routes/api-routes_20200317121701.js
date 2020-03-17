@@ -6,7 +6,7 @@ module.exports = function(app){
     passport.authenticate('local'),
     function (req, res) {
       res.json({
-        User: req.username,
+        user: req.user,
         success: true
       });
     });

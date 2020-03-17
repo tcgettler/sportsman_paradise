@@ -13,15 +13,11 @@ var passport = require('passport')
 
 passport.use(new LocalStrategy(
   function(username, password, done) {
-    if (username === "admin@txsportsmansparadise.com" && password === "Setting2020!"){
-      console.log(process.env.admin);
-      console.log('admin');
-      var username = {username: "admin", id: "admin1337"}
-      return done(null, username)
-    }
     db.User.findOne({ email: username }, function(err, user) {
       if (err) { return done(err); }
-     
+      if (username == process.env.admin && password == process.env.admin){
+        return done(null, username)
+      }
       if (!user) {
         return done(null, false, { message: 'Incorrect username.' });
       }
