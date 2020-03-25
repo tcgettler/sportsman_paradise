@@ -57,7 +57,6 @@ module.exports = function(app){
     });
  
     app.post('/games/create', function(req, res) {
-        if (!isAuthorized(req)) return ;
         db.Games.create({
           game_name: req.body.game_name,
           price: parseInt(req.body.price),

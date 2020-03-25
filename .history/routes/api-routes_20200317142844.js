@@ -1,24 +1,20 @@
 const db = require('../models');
+const hasWindow = typeof window==='undefined' ? false : true
 var passport = require('passport');
-
-var isAuthorized = function(req) {
-    //request cookie 
-    //check admin
-    //check db.find
-    //if are return true else return false
-}
-
- 
+// if (hasWindow) {
+//     window.pss = passport;
+// };
+// console.log('fuckface')
 module.exports = function(app){
     app.post('/login',
-        passport.authenticate('local'),
-        function (req, res) {
-        console.log(req);
-        res.json({
-            //user: res.username,
-            posting: "fuck",
-            success: true
-        });
+    passport.authenticate('local'),
+    function (req, res) {
+      res.json({
+        //user: res.username,
+        req,res,
+        posting: "fuck",
+        success: true
+      });
     });
 
     app.get('/api/games', function(req,res){
@@ -39,7 +35,7 @@ module.exports = function(app){
     });
 
 
-    app.get('/api/games/id/:id', function(req, res) {
+    app.get('/api/games/:id', function(req, res) {
         db.Product.find({ where: { id: req.params.id }})
           .then(function(data){
             res.json(data);
@@ -48,7 +44,7 @@ module.exports = function(app){
           });
     });
     
-    app.put('/api/games/id/:id', function(req, res){
+    app.put('/api/games/:id', function(req, res){
         console.log(req.params.id, req.body);
        db.Product.update({stock_quantity: parseInt(req.body.stock_quantity)}, {where: {id: parseInt(req.params.id)}})
             .then(function(response){
@@ -57,7 +53,6 @@ module.exports = function(app){
     });
  
     app.post('/games/create', function(req, res) {
-        if (!isAuthorized(req)) return ;
         db.Games.create({
           game_name: req.body.game_name,
           price: parseInt(req.body.price),
@@ -69,7 +64,7 @@ module.exports = function(app){
         });
     });
 
-    app.get('/api/seats/id/:id', function(req, res){
+    app.get('/api/seats/:id', function(req, res){
         db.Seats.findAll({ where: {GameId: parseInt(req.params.id)}})
         .then(function(response){
         res.json(response);
@@ -95,7 +90,6 @@ module.exports = function(app){
     })
 
     app.post('/seats/create', function(req, res) {
-        if (!isAuthorized(req)) return ;
         db.Seats.create({
           seat: parseInt(req.body.seat),
           isfree: req.body.isfree,
@@ -105,8 +99,4 @@ module.exports = function(app){
             res.json({success: true});
         });
     });
-
-    // app.get('*', function(req, res){
-
-    // })
 };
